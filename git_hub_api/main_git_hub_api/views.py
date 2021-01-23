@@ -8,3 +8,4 @@ def index(request):
     # response = py_request.get('https://api.github.com/repos/GrigoriyIL/-Decompilation/commits')
     # result_2 = response.json()
     # return HttpResponse(result_2[0]['commit'])
+
