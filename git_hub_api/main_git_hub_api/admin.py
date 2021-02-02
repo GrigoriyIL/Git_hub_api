@@ -4,7 +4,7 @@ from .models import RepositoryUser, Repository, Commit, Collaborator
 
 
 class RepositoryUserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'is_github_user')
+    list_display = ('id', 'name')
 
 
 class RepositoryAdmin(admin.ModelAdmin):
