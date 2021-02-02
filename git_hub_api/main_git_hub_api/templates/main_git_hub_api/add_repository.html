@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block title %} 
+Добавление репозитория :: {{block.super }} 
+{% endblock %} 
+ 
+
+
+{% block content %}
+    <h1>  Добавить рерозиторий </h1>
+
+    <form action="{% url 'add_repository' %}" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p}}
+
+        <button type="submit" class="btn btn-primary btn-block">Добавить новость</button>
+    </form>
+{% endblock content %}
