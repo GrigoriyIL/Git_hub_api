@@ -4,6 +4,9 @@ from django.db import models
 class RepositoryUser(models.Model):
     name = models.CharField('Логин', max_length=50)
 
+    def get_absolute_url(self):
+        return reverse('view_news', kwargs={"pk": self.pk})
+        
     def __str__(self):
         return self.name
     

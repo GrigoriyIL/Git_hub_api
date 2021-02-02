@@ -1,12 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpRequest
 import requests as py_request
-from .models import Commit, Collaborator, RepositoryUser, Repository
+from django.views.generic import ListView, DetailView, CreateView
+from django.urls import reverse_lazy
 from datetime import datetime
 
+from .models import Commit, Collaborator, RepositoryUser, Repository
 
-def index(request):
-    return HttpResponse(get_repository(request))
+
+class HomeRepository(ListView):
+    model = Repository
+    template_name = 'main_git_hub_api/home_repository_list.html'
+    context_object_name = 'repository_user'
+
+    def get_context_data(self,object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = 'Главная страница'
+        return context
 
 
 def get_repository(request):

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href=" {% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/style.css' %}">
+    <title>{% block title %} Репозитории {% endblock %}</title>
+  </head>
+
+  <body>
+      {% include 'inc/_nav.html' %}
+      
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-md-8">
+        {% block content %}
+        {% endblock %}
+        </div>
+      </div>
+    </div>
+    <script src="<link rel="stylesheet" href="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
+

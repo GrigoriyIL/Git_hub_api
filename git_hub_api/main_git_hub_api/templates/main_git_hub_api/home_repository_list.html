@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+
+{% block title %} 
+{{ title }} :: {{ block.super }} 
+{% endblock %} 
+
+
+{% block content %}
+    {% for item in repository_user %}
+    <div class="card mb-1">
+        <div class="card">
+        <h5 class="card-header">Создатель: {{item.owner}}</h5>
+            <div class="card-body">
+                <h5 class="card-title">{{item.repository_name}}</h5>
+                <p class="card-text">Последний коммит{{item.collaborator}}</p>
+                <a href="#" class="btn btn-primary">Подробности...</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock content %}
